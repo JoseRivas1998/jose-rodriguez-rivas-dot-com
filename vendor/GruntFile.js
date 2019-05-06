@@ -20,7 +20,8 @@ module.exports = function (grunt) {
                     "bower_components/bootstrap/dist/js/bootstrap.min.js",
                     "bower_components/ng-file-upload/ng-file-upload-all.min.js",
                     // THIRD PARTY ABOVE THIS LINE
-                    "../app/tcg.js"
+                    "../app/tcg.js",
+                    "../app/controllers/**/**.js"
                 ],
                 dest: "../js/app.js"
             },
