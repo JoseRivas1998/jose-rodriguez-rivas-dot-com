@@ -56,3 +56,9 @@ fabric.properties
 .idea/
 
 *.htaccess
+/vendor/node_modules/
+/vendor/bower_components/
+/js/
+/fonts/
+/css/
+/app/styles/main.css

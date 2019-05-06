@@ -1,0 +1,22 @@
+{
+  "name": "jose-rodriguez-rivas-dot-com",
+  "description": "Online Portfolio and Resume",
+  "main": "",
+  "authors": [
+    "Jose de Jesus Rodriguez Rivas"
+  ],
+  "license": "GPL-3.0",
+  "homepage": "https://www.joserodriguezrivas.com/",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "bootstrap": "^3.3",
+    "components-font-awesome": "4.7.0",
+    "angular": "^1.7.2",
+    "angular-route": "^1.7.2",
+    "moment": "^2.22.2",
+    "angular-sanitize": "^1.7.2",
+    "angular-recaptcha": "^4.1.5",
+    "plyr": "^3.3.20",
+    "ng-file-upload": "^12.2.13"
+  }
+}

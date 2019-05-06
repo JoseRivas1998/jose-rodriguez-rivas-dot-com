@@ -1,0 +1,21 @@
+{
+  "name": "jose-rodriguez-rivas-dot-com",
+  "version": "1.0.0",
+  "description": "Online Portfolio and Resume",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseRivas1998/Jose-Rodriguez-Rivas-dot-com.git"
+  },
+  "author": "Jose de Jesus Rodriguez Rivas",
+  "license": "GPL-3.0",
+  "homepage": "https://www.joserodriguezrivas.com/",
+  "dependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}
