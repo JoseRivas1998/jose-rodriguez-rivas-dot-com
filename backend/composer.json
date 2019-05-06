@@ -1,0 +1,10 @@
+{
+    "name": "joser/backend",
+    "authors": [
+        {
+            "name": "Jose Rodriguez Rivas",
+            "email": "JoseRivas823@gmail.com"
+        }
+    ],
+    "require": {}
+}

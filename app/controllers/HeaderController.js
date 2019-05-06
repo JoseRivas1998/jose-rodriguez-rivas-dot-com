@@ -16,7 +16,7 @@ angular.module('tcg')
             {
                 src: "/resume",
                 activeOn: "/resume",
-                icon: "file-text-o",
+                icon: "file-text",
                 title: "Resume"
             }
         ];
