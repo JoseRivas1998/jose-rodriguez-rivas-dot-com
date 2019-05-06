@@ -1,6 +1,12 @@
 var tcg = angular.module('tcg', ['ngRoute', 'ngSanitize']);
 
 tcg.config(function($routeProvider, $locationProvider) {
+
+    $routeProvider
+        .when('/', {
+           templateUrl: "app/views/portfolio.html"
+        });
+
     $locationProvider.html5Mode(true);
 });
 

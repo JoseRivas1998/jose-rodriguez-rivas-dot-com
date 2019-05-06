@@ -39,13 +39,20 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
+                    <li ng-repeat="item in mainMenu" ng-class="{active : checkActive(item.activeOn)}">
+                        <a ng-href="{{item.src}}"><i ng-class="['fa', 'fa-' + item.icon, 'fa-fw']"></i>&nbsp;{{item.title}}</a>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 </header>
-<h1>Coming Soon!</h1>
+
+<div class="container">
+    <div class="row">
+        <div ng-view></div>
+    </div>
+</div>
 
 </body>
 </html>

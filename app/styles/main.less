@@ -1,5 +1,36 @@
 @import "vars";
 
 body {
-  color: red;
+  font-family: @font-roboto;
+}
+
+.activeNavbarLink {
+  font-weight: bold;
+  background-color: @color-navbar-active-bg;
+  color: @color-navbar-active-text;
+}
+
+.navbar-default {
+  background-color: @color-navbar-background;
+  border-color: @color-navbar-border;
+
+  .navbar-nav {
+    > li {
+      > a {
+        border-radius: 30px;
+        color: @color-navbar-text;
+
+        &:hover, &:focus {
+          .activeNavbarLink;
+        }
+      }
+    }
+
+    > .active {
+      > a {
+        .activeNavbarLink;
+      }
+    }
+
+  }
 }
