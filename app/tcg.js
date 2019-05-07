@@ -4,7 +4,8 @@ tcg.config(function($routeProvider, $locationProvider) {
 
     $routeProvider
         .when('/', {
-           templateUrl: "app/views/portfolio.html"
+           templateUrl: "app/views/portfolio.html",
+            controller: "PortfolioController"
         });
 
     $locationProvider.html5Mode(true);

@@ -21,7 +21,8 @@ module.exports = function (grunt) {
                     "bower_components/ng-file-upload/ng-file-upload-all.min.js",
                     // THIRD PARTY ABOVE THIS LINE
                     "../app/tcg.js",
-                    "../app/controllers/**/**.js"
+                    "../app/controllers/**/**.js",
+                    "../app/services/**/**.js"
                 ],
                 dest: "../js/app.js"
             },
