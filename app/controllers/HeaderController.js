@@ -21,8 +21,6 @@ angular.module('tcg')
             }
         ];
 
-        console.log($scope.mainMenu);
-
         $scope.checkActive = function (pathToCheck) {
             return $location.path() === pathToCheck;
         };
