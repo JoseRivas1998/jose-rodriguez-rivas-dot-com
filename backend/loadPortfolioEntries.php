@@ -16,7 +16,7 @@ if($selectPortStmt) {
             if($selectPortRes->num_rows > 0) {
                 while($row = $selectPortRes->fetch_assoc()) {
                     $toAdd = $row;
-                    $selectTechsSql = "SELECT t.id, t.name FROM portfolio_technologies JOIN technologies t on portfolio_technologies.technology = t.id WHERE entry = ?";
+                    $selectTechsSql = "SELECT t.id, t.name FROM portfolio_technologies JOIN technologies t on portfolio_technologies.technology = t.id WHERE entry = ? ORDER BY t.name";
                     $selectTechsStmt = $conn->prepare($selectTechsSql);
                     if($selectTechsStmt) {
                         if($selectTechsStmt->bind_param("i", $toAdd["id"])) {
