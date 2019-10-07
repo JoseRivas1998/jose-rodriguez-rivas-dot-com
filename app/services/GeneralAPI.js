@@ -11,7 +11,30 @@ angular.module('tcg')
                 return $http({
                     url: $rootScope.base_url + "backend/loadPortfolioEntries.php"
                 })
-            }
+            },
+
+            authorize_user: function () {
+                return $http({
+                    url: $rootScope.base_url + "backend/authorizeUser.php"
+                })
+            },
+
+            login: function(data) {
+                return $http({
+                    method: "POST",
+                    data: $.param(data),
+                    url: $rootScope.base_url + "backend/login.php",
+                    headers: {
+                        "Content-Type": 'application/x-www-form-urlencoded'
+                    }
+                });
+            },
+
+            list_min_portfolio: function () {
+                return $http({
+                    url: $rootScope.base_url + "backend/listPortfolioDTO.php"
+                })
+            },
 
         }
     });
