@@ -25,6 +25,9 @@ angular.module('tcg')
 
         $scope.technologies = [];
 
+        $scope.techToAdd = -1;
+        $scope.techToRemove = -1;
+
         $scope.loadTechnologies = function () {
             GeneralAPI.load_technologies().then(
                 function (success) {
@@ -46,6 +49,7 @@ angular.module('tcg')
             isOnGoing: false
         };
 
+        $scope.entryTechs = [];
         $scope.loadEntry = function () {
             $scope.formData = {
                 id: -1,
@@ -56,6 +60,7 @@ angular.module('tcg')
                 target_url: "",
                 isOnGoing: false
             };
+            $scope.entryTechs = [];
             GeneralAPI.get_entry($scope.selectedEntry.id).then(
                 function (success) {
                     $scope.formData = {
@@ -67,12 +72,58 @@ angular.module('tcg')
                         target_url: success.data.target_url,
                         isOnGoing: success.data.isOnGoing === 1
                     };
-                    console.log($scope.formData);
+                    $scope.entryTechs = success.data.technologies;
                 },
                 function (error) {
                     console.log(error);
                 }
             );
+        };
+
+        $scope.isTechnologyInEntry = function(techId) {
+            var found = false;
+            for(var i = 0; i < $scope.entryTechs.length && !found; i++) {
+                if($scope.entryTechs[i] === techId) {
+                    found = true;
+                }
+            }
+            return found;
+        };
+
+        $scope.selectTechToRemove = function(techId) {
+            $scope.techToRemove = techId;
+        };
+
+        $scope.selectTechToAdd = function(techId) {
+            $scope.techToAdd = techId;
+        };
+
+        $scope.addTech = function() {
+            if($scope.techToAdd !== -1) {
+                GeneralAPI.add_tech_to_entry($scope.techToAdd, $scope.selectedEntry.id).then(
+                    function (success) {
+                        $scope.loadEntry();
+                    },
+                    function (error) {
+                        console.log(error);
+                    }
+                );
+                $scope.techToAdd = -1;
+            }
+        };
+
+        $scope.removeTech = function() {
+            if($scope.techToRemove !== -1) {
+                GeneralAPI.remove_tech_from_entry($scope.techToRemove, $scope.selectedEntry.id).then(
+                    function(success) {
+                        $scope.loadEntry();
+                    },
+                    function(error) {
+                        console.log(error);
+                    }
+                );
+                $scope.techToRemove = -1;
+            }
         };
 
         $scope.loadEntries();
