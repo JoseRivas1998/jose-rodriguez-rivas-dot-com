@@ -36,5 +36,16 @@ angular.module('tcg')
                 })
             },
 
+            get_entry: function (id) {
+                return $http({
+                    method: "POST",
+                    data: $.param({id: id}),
+                    url: $rootScope.base_url + "backend/loadEntry.php",
+                    headers: {
+                        "Content-Type": 'application/x-www-form-urlencoded'
+                    }
+                });
+            },
+
         }
     });
