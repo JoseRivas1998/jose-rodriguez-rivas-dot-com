@@ -67,7 +67,18 @@ angular.module('tcg')
                         "Content-Type": 'application/x-www-form-urlencoded'
                     }
                 });
-            }
+            },
+
+            update_entry: function(data) {
+                return $http({
+                    method: "POST",
+                    data: $.param(data),
+                    url: $rootScope.base_url + "backend/updateEntry.php",
+                    headers: {
+                        "Content-Type": 'application/x-www-form-urlencoded'
+                    }
+                });
+            },
 
         }
     });

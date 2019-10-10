@@ -80,26 +80,26 @@ angular.module('tcg')
             );
         };
 
-        $scope.isTechnologyInEntry = function(techId) {
+        $scope.isTechnologyInEntry = function (techId) {
             var found = false;
-            for(var i = 0; i < $scope.entryTechs.length && !found; i++) {
-                if($scope.entryTechs[i] === techId) {
+            for (var i = 0; i < $scope.entryTechs.length && !found; i++) {
+                if ($scope.entryTechs[i] === techId) {
                     found = true;
                 }
             }
             return found;
         };
 
-        $scope.selectTechToRemove = function(techId) {
+        $scope.selectTechToRemove = function (techId) {
             $scope.techToRemove = techId;
         };
 
-        $scope.selectTechToAdd = function(techId) {
+        $scope.selectTechToAdd = function (techId) {
             $scope.techToAdd = techId;
         };
 
-        $scope.addTech = function() {
-            if($scope.techToAdd !== -1) {
+        $scope.addTech = function () {
+            if ($scope.techToAdd !== -1) {
                 GeneralAPI.add_tech_to_entry($scope.techToAdd, $scope.selectedEntry.id).then(
                     function (success) {
                         $scope.loadEntry();
@@ -112,18 +112,29 @@ angular.module('tcg')
             }
         };
 
-        $scope.removeTech = function() {
-            if($scope.techToRemove !== -1) {
+        $scope.removeTech = function () {
+            if ($scope.techToRemove !== -1) {
                 GeneralAPI.remove_tech_from_entry($scope.techToRemove, $scope.selectedEntry.id).then(
-                    function(success) {
+                    function (success) {
                         $scope.loadEntry();
                     },
-                    function(error) {
+                    function (error) {
                         console.log(error);
                     }
                 );
                 $scope.techToRemove = -1;
             }
+        };
+
+        $scope.submitForm = function () {
+          GeneralAPI.update_entry($scope.formData).then(
+              function(success) {
+                  $scope.loadEntry();
+              },
+              function(error) {
+                  console.log(error);
+              }
+          );
         };
 
         $scope.loadEntries();
