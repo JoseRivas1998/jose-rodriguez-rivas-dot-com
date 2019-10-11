@@ -18,6 +18,7 @@ tcg.config(function ($routeProvider, $locationProvider) {
         })
         .when('/admin/add', {
             templateUrl: "app/views/admin_add.html",
+            controller: "AdminAddController",
             authorize: ['admin']
         });
 
