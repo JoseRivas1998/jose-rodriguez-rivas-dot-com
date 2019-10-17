@@ -36,39 +36,44 @@
                             <label>Description</label>
                             <textarea type="text" class="form-control" ng-model="formData.description" rows="10"></textarea>
                         </div>
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <label>Techs in Entry</label>
+                                <div class="list-group">
+                                    <button
+                                            type="button"
+                                            ng-repeat="tech in technologies"
+                                            ng-class="['list-group-item', tech.id === techToRemove ? 'active': '']"
+                                            ng-if="isTechnologyInEntry(tech.id)"
+                                            ng-click="selectTechToRemove(tech.id)">
+                                        {{tech.name}}
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="btn-group-vertical" role="group">
+                                    <button class="btn btn-primary" ng-click="removeTech()" type="button"><i class="fa fa-caret-right fa-fw"></i></button>
+                                    <button class="btn btn-primary" ng-click="addTech()" type="button"><i class="fa fa-caret-left fa-fw"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-xs-5">
+                                <label>Available Techs</label>
+                                <div class="list-group">
+                                    <button
+                                            type="button"
+                                            ng-repeat="tech in technologies"
+                                            ng-class="['list-group-item', tech.id === techToAdd ? 'active': '']"
+                                            ng-if="!isTechnologyInEntry(tech.id)"
+                                            ng-click="selectTechToAdd(tech.id)">
+                                        {{tech.name}}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit">Add Entry</button>
+                        </div>
                     </form>
-                    <div class="row">
-                        <div class="col-xs-5">
-                            <label>Techs in Entry</label>
-                            <div class="list-group">
-                                <button
-                                        ng-repeat="tech in technologies"
-                                        ng-class="['list-group-item', tech.id === techToRemove ? 'active': '']"
-                                        ng-if="isTechnologyInEntry(tech.id)"
-                                        ng-click="selectTechToRemove(tech.id)">
-                                    {{tech.name}}
-                                </button>
-                            </div>
-                        </div>
-                        <div class="col-xs-2">
-                            <div class="btn-group-vertical" role="group">
-                                <button class="btn btn-primary" ng-click="removeTech()"><i class="fa fa-caret-right fa-fw"></i></button>
-                                <button class="btn btn-primary" ng-click="addTech()"><i class="fa fa-caret-left fa-fw"></i></button>
-                            </div>
-                        </div>
-                        <div class="col-xs-5">
-                            <label>Available Techs</label>
-                            <div class="list-group">
-                                <button
-                                        ng-repeat="tech in technologies"
-                                        ng-class="['list-group-item', tech.id === techToAdd ? 'active': '']"
-                                        ng-if="!isTechnologyInEntry(tech.id)"
-                                        ng-click="selectTechToAdd(tech.id)">
-                                    {{tech.name}}
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-xs-6">
                     <a ng-href="{{formData.target_url}}" target="_blank"><img ng-src="{{formData.image_url}}" class="img-responsive"></a>
