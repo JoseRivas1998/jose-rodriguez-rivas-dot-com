@@ -91,5 +91,16 @@ angular.module('tcg')
                 });
             },
 
+            delete_entry: function (entryId) {
+                return $http({
+                    method: "POST",
+                    data: $.param({id: entryId}),
+                    url: $rootScope.base_url + "backend/deleteEntry.php",
+                    headers: {
+                        "Content-Type": 'application/x-www-form-urlencoded'
+                    }
+                });
+            }
+
         }
     });

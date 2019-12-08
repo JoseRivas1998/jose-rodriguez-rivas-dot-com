@@ -137,6 +137,19 @@ angular.module('tcg')
           );
         };
 
+        $scope.deleteEntry = function() {
+            if(confirm("Are you sure you want to delete this? This cannot be undone.")) {
+                GeneralAPI.delete_entry($scope.formData.id).then(
+                    function(success) {
+                        $scope.loadEntries();
+                    },
+                    function(error) {
+                        console.log(error);
+                    }
+                );
+            }
+        };
+
         $scope.loadEntries();
         $scope.loadTechnologies();
 
