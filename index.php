@@ -42,6 +42,9 @@
                     <li ng-repeat="item in mainMenu" ng-class="{active : checkActive(item.activeOn)}">
                         <a ng-href="{{item.src}}"><i ng-class="['fa', 'fa-' + item.icon, 'fa-fw']"></i>&nbsp;{{item.title}}</a>
                     </li>
+                    <li>
+                        <a href="/files/Jose_de_Jesus_Rodriguez_Rivas_Resume.pdf" target="_blank"><i class="fa fa-file-text fa-fw"></i>&nbsp;Resume</a>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

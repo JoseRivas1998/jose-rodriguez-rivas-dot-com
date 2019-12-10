@@ -12,12 +12,6 @@ angular.module('tcg')
                 activeOn: "/about",
                 icon: "info",
                 title: "About"
-            },
-            {
-                src: "/resume",
-                activeOn: "/resume",
-                icon: "file-text",
-                title: "Resume"
             }
         ];
 
