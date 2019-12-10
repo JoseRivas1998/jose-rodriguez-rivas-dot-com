@@ -20,6 +20,11 @@ tcg.config(function ($routeProvider, $locationProvider) {
             templateUrl: "app/views/admin_add.html",
             controller: "AdminAddController",
             authorize: ['admin']
+        })
+        .when('/admin/tech', {
+            templateUrl: "app/views/admin_tech.html",
+            controller: "AdminTechController",
+            authorize: ['admin']
         });
 
     $locationProvider.html5Mode(true);

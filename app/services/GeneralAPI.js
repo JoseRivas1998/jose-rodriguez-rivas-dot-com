@@ -100,7 +100,40 @@ angular.module('tcg')
                         "Content-Type": 'application/x-www-form-urlencoded'
                     }
                 });
-            }
+            },
+
+            update_tech: function(data) {
+                return $http({
+                    method: "POST",
+                    data: $.param(data),
+                    url: $rootScope.base_url + "backend/updateTechnology.php",
+                    headers: {
+                        "Content-Type": 'application/x-www-form-urlencoded'
+                    }
+                });
+            },
+
+            add_tech: function(data) {
+                return $http({
+                    method: "POST",
+                    data: $.param(data),
+                    url: $rootScope.base_url + "backend/addTechnology.php",
+                    headers: {
+                        "Content-Type": 'application/x-www-form-urlencoded'
+                    }
+                });
+            },
+
+            delete_tech: function(data) {
+                return $http({
+                    method: "POST",
+                    data: $.param(data),
+                    url: $rootScope.base_url + "backend/deleteTechnology.php",
+                    headers: {
+                        "Content-Type": 'application/x-www-form-urlencoded'
+                    }
+                });
+            },
 
         }
     });
