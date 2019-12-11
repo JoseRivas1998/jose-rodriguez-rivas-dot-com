@@ -25,6 +25,9 @@ tcg.config(function ($routeProvider, $locationProvider) {
             templateUrl: "app/views/admin_tech.html",
             controller: "AdminTechController",
             authorize: ['admin']
+        })
+        .when('/about', {
+            templateUrl: "app/views/about.html"
         });
 
     $locationProvider.html5Mode(true);
