@@ -25,7 +25,7 @@ if($_POST) {
                             $user = $selectRes->fetch_assoc();
                             $hash = $user["passHash"];
                             if(hash_equals($hash, crypt($password, $hash))) {
-                                $insertStmt = $userConn->prepare("INSERT INTO usersessions(username, sessionId, expirationDate) VALUES (?, ?, CURRENT_DATE() + INTERVAL 1 DAY)");
+                                $insertStmt = $userConn->prepare("INSERT INTO userSessions(username, sessionId, expirationDate) VALUES (?, ?, CURRENT_DATE() + INTERVAL 1 DAY)");
                                 if($insertStmt) {
                                     $insertStmt->bind_param("ss", $user["username"], $sessionId);
                                     if($insertStmt->execute()) {
