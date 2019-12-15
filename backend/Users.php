@@ -33,7 +33,7 @@ class Users
      */
     public static function SessionExists($userConn, $sessionId)
     {
-        $selectStmt = $userConn->prepare("SELECT * FROM usersessions WHERE sessionId = ? AND expirationDate >= CURRENT_DATE() LIMIT 1");
+        $selectStmt = $userConn->prepare("SELECT * FROM userSessions WHERE sessionId = ? AND expirationDate >= CURRENT_DATE() LIMIT 1");
         if ($selectStmt) {
             $selectStmt->bind_param("s", $sessionId);
             $selectStmt->execute();
@@ -57,7 +57,7 @@ class Users
      */
     public static function GetUser($userConn, $sessionId)
     {
-        $selectSessionStmt = $userConn->prepare("SELECT * FROM usersessions WHERE sessionId = ? AND expirationDate >= CURRENT_DATE() LIMIT 1");
+        $selectSessionStmt = $userConn->prepare("SELECT * FROM userSessions WHERE sessionId = ? AND expirationDate >= CURRENT_DATE() LIMIT 1");
         $output = null;
         if($selectSessionStmt) {
             $selectSessionStmt->bind_param("s", $sessionId);
@@ -94,7 +94,7 @@ class Users
      */
     public static function ClearSessions($userConn, $sessionId) {
         if(Users::SessionExists($userConn, $sessionId)) {
-            $deleteStmt = $userConn->prepare("DELETE FROM usersessions WHERE sessionId = ?");
+            $deleteStmt = $userConn->prepare("DELETE FROM userSessions WHERE sessionId = ?");
             if($deleteStmt) {
                 $deleteStmt->bind_param("s", $sessionId);
                 $deleteStmt->execute();
@@ -113,7 +113,7 @@ class Users
         if(Users::SessionExists($userConn, $sessionId)) {
             $user = Users::GetUser($userConn, $sessionId);
             if($user) {
-                $selectStmt = $userConn->prepare("SELECT * FROM adminusers WHERE userId = ?");
+                $selectStmt = $userConn->prepare("SELECT * FROM adminUsers WHERE userId = ?");
                 if($selectStmt) {
                     $userId = intval($user["id"]);
                     $selectStmt->bind_param("i", $userId);
