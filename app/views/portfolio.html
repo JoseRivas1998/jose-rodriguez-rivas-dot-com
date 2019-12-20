@@ -13,7 +13,7 @@
                 <a ng-href="{{entry.target_url}}" target="_blank"><img ng-src="{{entry.image_url}}" alt="{{entry.name}}"></a>
                 <div class="caption">
                     <h3>{{entry.name}}&nbsp;<small>{{entry.year + (entry.isOnGoing == 1 ? ' - Present' : '')}}</small></h3>
-                    <div ng-bind-html="entry.description" class="text-justify"></div>
+                    <div ng-bind-html="entry.description"></div>
                     <p class="text-center">
                         <span ng-repeat="tech in entry.technologies" class="label label-info label-tech">{{tech.name}}</span>
                     </p>
