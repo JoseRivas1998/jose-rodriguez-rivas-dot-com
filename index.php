@@ -45,6 +45,7 @@
                     <li>
                         <a href="/files/Jose_de_Jesus_Rodriguez_Rivas_Resume.pdf" target="_blank"><i class="fa fa-file-text fa-fw"></i>&nbsp;Resume</a>
                     </li>
+                    <li><a href="https://www.github.com/joserivas1998" target="_blank"><i class="fa fa-github fa-fw"></i>&nbsp;GitHub</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
