@@ -3,3 +3,16 @@
 body {
   font-family: $font-roboto;
 }
+
+.navbar-light {
+  background-color: $color-navbar-background;
+  border-color: $color-navbar-border;
+
+  .navbar-brand {
+    color: $color-navbar-text;
+
+    &:hover, &:active, &:focus {
+      color: $color-navbar-active-text;
+    }
+  }
+}

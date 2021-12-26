@@ -1,11 +1,14 @@
 import React from 'react';
 
+import Navigation from "../../components/Navigation/Navigation";
+
 function App() {
-  return (
-    <div>
-      Hello world!
-    </div>
-  );
+    return (
+        <>
+            <Navigation/>
+            Hello world!
+        </>
+    );
 }
 
 export default App;
