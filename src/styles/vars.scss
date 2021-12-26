@@ -17,3 +17,8 @@ $color-navbar-text: $color-primary-3;
 $color-navbar-active-text: $color-primary-4;
 
 $color-navbar-active-bg: $color-primary-2;
+
+@mixin active-navbar-link {
+  background-color: $color-navbar-active-bg !important;
+  color: $color-navbar-active-text;
+}

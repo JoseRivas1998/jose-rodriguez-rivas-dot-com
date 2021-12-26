@@ -15,4 +15,19 @@ body {
       color: $color-navbar-active-text;
     }
   }
+
+  a.nav-link {
+    border-radius: 2rem;
+    color: $color-navbar-text;
+
+    &:hover, &:active, &:focus {
+      @include active-navbar-link;
+    }
+  }
+
+  a.nav-link.active {
+    @include active-navbar-link;
+  }
+
 }
+

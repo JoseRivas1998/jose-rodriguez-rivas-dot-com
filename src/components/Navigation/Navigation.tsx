@@ -1,6 +1,10 @@
 import React from "react";
 import {Container, Nav, Navbar} from "react-bootstrap";
 import {LinkContainer} from 'react-router-bootstrap';
+import {IconDefinition} from "@fortawesome/fontawesome-svg-core";
+import {faBriefcase, faFileAlt, faInfo} from "@fortawesome/free-solid-svg-icons";
+import {faGithub} from "@fortawesome/free-brands-svg-icons";
+
 import NavigationItem from "./NavigationItem/NavigationItem";
 
 const Navigation = () => {
@@ -8,31 +12,40 @@ const Navigation = () => {
     type NavItemType = {
         to: string;
         title: string;
+        icon: IconDefinition;
         external?: undefined | boolean;
     };
     const nav_items: NavItemType[] = [
         {
             title: "Portfolio",
-            to: "/"
+            to: "/",
+            icon: faBriefcase
         },
         {
             title: "About",
-            to: "/about"
+            to: "/about",
+            icon: faInfo
         },
         {
             title: "Resume",
             to: "https://joserodriguezrivas.com/files/Jose_de_Jesus_Rodriguez_Rivas_Resume.pdf",
+            icon: faFileAlt,
             external: true
         },
         {
             title: "Github",
             to: "https://www.github.com/joserivas1998",
+            icon: faGithub,
             external: true
         }
     ];
 
     const render_nav_item = (nav_item: NavItemType, index: number) => {
-        return <NavigationItem to={nav_item.to} title={nav_item.title} external={nav_item.external} key={index}/>;
+        return <NavigationItem to={nav_item.to}
+                               title={nav_item.title}
+                               external={nav_item.external}
+                               icon={nav_item.icon}
+                               key={index}/>;
     };
 
     return (
