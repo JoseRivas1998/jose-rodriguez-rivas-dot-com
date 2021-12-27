@@ -28,7 +28,7 @@ const Navigation = () => {
         },
         {
             title: "Resume",
-            to: "https://joserodriguezrivas.com/files/Jose_de_Jesus_Rodriguez_Rivas_Resume.pdf",
+            to: "https://tiny-country-games-public-files.s3.us-west-2.amazonaws.com/documents/JoseDeJesus.RodriguezRivas-Resume.pdf",
             icon: faFileAlt,
             external: true
         },
