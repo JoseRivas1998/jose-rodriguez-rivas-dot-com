@@ -1,0 +1,16 @@
+.EntryCard {
+  border: none;
+}
+
+.EntryCardTitle {
+  text-align: left;
+  .EntryCardYear {
+    font-size: 0.75em;
+    font-weight: 400;
+    color: #777;
+  }
+}
+
+.EntryCardText {
+  text-align: left;
+}
