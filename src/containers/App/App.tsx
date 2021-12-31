@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router";
 
 import Navigation from "../../components/Navigation/Navigation";
 import Portfolio from "../Portfolio/Portfolio";
+import About from "../About/About";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Row>
                     <Routes>
                         <Route path={'/'} element={<Portfolio/>} />
+                        <Route path={'/about'} element={<About/>} />
                     </Routes>
                 </Row>
             </Container>
