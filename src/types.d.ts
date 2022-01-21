@@ -13,3 +13,12 @@ export type PortfolioEntry = {
     onGoing: boolean;
     technologies: PortfolioTechnology[];
 }
+
+export type Certification = {
+    id: number;
+    title: string;
+    link: string;
+    imageUrl: string;
+    issueDate: string;
+    expirationDate: string | null;
+}
