@@ -7,6 +7,7 @@ import profile_img from './jose-profile.png';
 import styles from './About.module.scss';
 import {Certification} from "../../types";
 import CertificationCard from "../../components/CertificationCard/CertificationCard";
+import {Helmet} from "react-helmet";
 
 const About = () => {
 
@@ -46,6 +47,9 @@ const About = () => {
 
     return (
         <Col>
+            <Helmet>
+                <title>About Me | Jose Rodriguez Rivas</title>
+            </Helmet>
             <Row>
                 <Col className={'text-right'} xs={4} sm={2}>
                     <Image

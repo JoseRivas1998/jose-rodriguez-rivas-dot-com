@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Col, Row} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Helmet} from "react-helmet";
 import {faSpinner} from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
 
@@ -54,6 +55,9 @@ const Portfolio = () => {
 
     return (
         <Col>
+            <Helmet>
+                <title>Jose Rodriguez Rivas</title>
+            </Helmet>
             <Row>
                 <Col className={'text-center'}>
                     <h2>Portfolio</h2>
