@@ -3,6 +3,7 @@ import {Card} from "react-bootstrap";
 
 import {PortfolioEntry} from "../../types";
 import classes from "./EntryCard.module.scss";
+import TechnologyBadge from "../TechnologyBadge/TechnologyBadge";
 
 const EntryCard = (props: { entry: PortfolioEntry }) => {
     return (
@@ -17,6 +18,7 @@ const EntryCard = (props: { entry: PortfolioEntry }) => {
                 </Card.Title>
                 <Card.Text className={classes.EntryCardText}
                            dangerouslySetInnerHTML={{__html: props.entry.description}}/>
+                {props.entry.technologies.map(value => <TechnologyBadge tech={value} key={value.id}/>)}
             </Card.Body>
         </Card>
     );
