@@ -1,0 +1,26 @@
+name: Write Env Files To S3
+
+on:
+  workflow_dispatch:
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - env_file_secret: "ENV_FILE"
+            s3_url_secret: "ENV_FILE_S3_URL"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      - name: Create env file
+        run: |
+          echo "${{ secrets[matrix.env_file_secret] }}" >> .env
+      - name: Upload env file to S3
+        run: |
+          aws s3 cp .env ${{ secrets[matrix.s3_url_secret] }}
