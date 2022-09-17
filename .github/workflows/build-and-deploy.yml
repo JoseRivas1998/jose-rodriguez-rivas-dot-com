@@ -18,9 +18,9 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-2
-      - name: Create env file
+      - name: Download env file from S3
         run: |
-          echo "${{ secrets.ENV_FILE }}" >> .env
+          aws s3 cp ${{ secrets.ENV_FILE_S3_URL }} .env
       - name: Install Node Dependencies
         run: npm ci
       - name: Build Website
