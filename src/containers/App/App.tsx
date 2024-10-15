@@ -3,8 +3,8 @@ import { Container, Row } from 'react-bootstrap';
 import { Route, Routes } from 'react-router';
 
 import Navigation from '@/components/Navigation/Navigation';
-import Portfolio from '@/containers/Portfolio/Portfolio';
-import About from '@/containers/About/About';
+const Portfolio = React.lazy(() => import('@/containers/Portfolio/Portfolio'));
+const About = React.lazy(() => import('@/containers/About/About'));
 
 function App() {
   return (
@@ -15,11 +15,19 @@ function App() {
           <Routes>
             <Route
               path={'/'}
-              element={<Portfolio />}
+              element={
+                <React.Suspense>
+                  <Portfolio />
+                </React.Suspense>
+              }
             />
             <Route
               path={'/about'}
-              element={<About />}
+              element={
+                <React.Suspense>
+                  <About />
+                </React.Suspense>
+              }
             />
           </Routes>
         </Row>
