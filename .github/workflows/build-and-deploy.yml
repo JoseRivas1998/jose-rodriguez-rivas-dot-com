@@ -14,9 +14,35 @@ concurrency:
   group: build-and-deploy
 
 jobs:
-  build:
+  check-format:
     runs-on: ubuntu-latest
 
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Node Dependencies
+        run: npm ci
+      - name: Check Code Format
+        run: npm run format:check
+  lint-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Node Dependencies
+        run: npm ci
+      - name: Lint Code
+        run: npm run lint
+  build:
+    runs-on: ubuntu-latest
+    needs:
+      - check-format
+      - lint-code
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
