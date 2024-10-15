@@ -2,8 +2,8 @@ import React from 'react';
 import { Col, Image, Row } from 'react-bootstrap';
 import ReactMarkdown from 'react-markdown';
 
-import { Certification } from '../../types.ts';
-import CertificationCard from '../../components/CertificationCard/CertificationCard';
+import { Certification } from '@/types.ts';
+import CertificationCard from '@/components/CertificationCard/CertificationCard';
 import { Helmet } from 'react-helmet';
 import { useQuery } from '@tanstack/react-query';
 

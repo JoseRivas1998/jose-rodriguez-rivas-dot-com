@@ -2,9 +2,9 @@ import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { Route, Routes } from 'react-router';
 
-import Navigation from '../../components/Navigation/Navigation';
-import Portfolio from '../Portfolio/Portfolio';
-import About from '../About/About';
+import Navigation from '@/components/Navigation/Navigation';
+import Portfolio from '@/containers/Portfolio/Portfolio';
+import About from '@/containers/About/About';
 
 function App() {
   return (

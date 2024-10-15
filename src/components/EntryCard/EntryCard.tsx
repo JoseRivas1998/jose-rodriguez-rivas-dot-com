@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 
-import { PortfolioEntry } from '../../types.ts';
+import { PortfolioEntry } from '@/types.ts';
 import TechnologyBadge from '../TechnologyBadge/TechnologyBadge';
 
 const EntryCard = (props: { entry: PortfolioEntry }) => {

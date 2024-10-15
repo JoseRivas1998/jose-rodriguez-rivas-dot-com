@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 
-import { Certification } from '../../types.ts';
+import { Certification } from '@/types.ts';
 
 type Props = {
   certification: Certification;
