@@ -1,4 +1,4 @@
-@import "./vars";
+@import './vars';
 
 body {
   font-family: $font-roboto;
@@ -11,7 +11,9 @@ body {
   .navbar-brand {
     color: $color-navbar-text;
 
-    &:hover, &:active, &:focus {
+    &:hover,
+    &:active,
+    &:focus {
       color: $color-navbar-active-text;
     }
   }
@@ -20,7 +22,9 @@ body {
     border-radius: 2rem;
     color: $color-navbar-text;
 
-    &:hover, &:active, &:focus {
+    &:hover,
+    &:active,
+    &:focus {
       @include active-navbar-link;
     }
   }
@@ -28,6 +32,4 @@ body {
   a.nav-link.active {
     @include active-navbar-link;
   }
-
 }
-
